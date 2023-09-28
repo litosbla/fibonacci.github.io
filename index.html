@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ingrese el numero</h1>
+    <input type="number" id="cantidad">
+    <button id="generar" onclick="generar()">Generar numeros de la serie de fibonacci</button>
+    <br>
+    <script>
+        
+        
+        function generar(){
+            
+            let fibo = [0,1];
+            let Numero = document.getElementById('cantidad').value
+        
+            var limite = Numero
+           
+        
+            for(let i=2; i < limite; i++){
+                
+                fibo.push(fibo[i-1] + fibo[i-2]);
+                console.log(fibo[i])
+               
+            }
+            const TagBody = document.querySelector("body")
+            
+            for(let j=0; j<= fibo.length; j++ ){
+            
+                let label=document.createElement('label')
+                label.textContent= fibo[j]
+                TagBody.appendChild(label)
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
